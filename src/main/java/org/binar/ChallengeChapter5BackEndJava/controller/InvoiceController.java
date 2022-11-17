@@ -70,13 +70,12 @@ public class InvoiceController {
             ));
             String seatNumber = "Nomor kursi: " +
                     seats.getSeatNumberCompositeKey().getNomorBarisKursi() +
-                    " " +
                     seats.getSeatNumberCompositeKey().getNomorKolomKursi();
 
             Schedules schedules = schedulesServices.findScheduleById(seats.getScheduleID());
             String jadwalFilm = "Jadwal tayang: " +
                     schedules.getDate() +
-                    " " +
+                    " pukul " +
                     schedules.getStartTime() +
                     "-" +
                     schedules.getEndTime();

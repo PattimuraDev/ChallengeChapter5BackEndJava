@@ -31,6 +31,7 @@ public class AppStartRunner implements CommandLineRunner {
 
     /**
      * running console
+     *
      * @param args arguments
      */
     @Override
@@ -81,14 +82,32 @@ public class AppStartRunner implements CommandLineRunner {
                     break;
                 case 3:
                     List<Seats> seatsAvailable = seatsService.getAllSeatsAvailable();
-                    for (Seats seat : seatsAvailable) {
+                    List<Schedules> listSchedule = new ArrayList<>();
+                    List<Films> listFilm = new ArrayList<>();
+                    for (int i = 0; i < seatsAvailable.size(); i++) {
+                        listSchedule.add(i, scheduleServices.findScheduleById(seatsAvailable.get(i).getScheduleID()));
+                    }
+
+                    for (int i = 0; i < listSchedule.size(); i++) {
+                        listFilm.add(i, filmsService.getFilmById(listSchedule.get(i).getFilmsCode()));
+                    }
+
+                    for (int i = 0; i < seatsAvailable.size(); i++) {
                         System.out.println("Nomor seat: " +
-                                seat.getSeatNumberCompositeKey().getNomorBarisKursi() +
-                                seat.getSeatNumberCompositeKey().getNomorKolomKursi() +
+                                seatsAvailable.get(i).getSeatNumberCompositeKey().getNomorBarisKursi() +
+                                seatsAvailable.get(i).getSeatNumberCompositeKey().getNomorKolomKursi() +
                                 "\nStatus: " +
-                                seat.getStatus() +
+                                seatsAvailable.get(i).getStatus() +
                                 "\nStudio: " +
-                                seat.getStudioName() +
+                                seatsAvailable.get(i).getStudioName() +
+                                "\nJudul film: " +
+                                listFilm.get(i).getFilmName() +
+                                "\nJadwal tayang: " +
+                                listSchedule.get(i).getDate() +
+                                " " +
+                                listSchedule.get(i).getStartTime() +
+                                "-" +
+                                listSchedule.get(i).getEndTime() +
                                 "\n"
                         );
                     }
