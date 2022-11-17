@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4_Landscape" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="72862b1d-6111-43f5-801b-cbd3548e5d1d">
+    <queryString>
+        <![CDATA[]]>
+    </queryString>
+    <field name="nomorKursi" class="java.lang.String"/>
+    <field name="namaFilm" class="java.lang.String"/>
+    <field name="jadwalFilm" class="java.lang.String"/>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="114" splitType="Stretch">
+            <staticText>
+                <reportElement x="207" y="40" width="389" height="63" uuid="11862649-1fc1-4118-80dc-319470b12f66"/>
+                <textElement>
+                    <font size="28"/>
+                </textElement>
+                <text><![CDATA[INVOICE PEMESANAN TIKET FILM]]></text>
+            </staticText>
+            <textField pattern="MMMMM dd, yyyy">
+                <reportElement x="0" y="10" width="100" height="30" uuid="d87162d2-fde4-465c-b13c-aca8f43611cd"/>
+                <textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+            </textField>
+            <textField pattern="HH:mm">
+                <reportElement x="0" y="40" width="100" height="30" uuid="b2d6db37-435e-402a-b251-55b71790a427"/>
+                <textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+            </textField>
+        </band>
+    </title>
+    <pageHeader>
+        <band height="35" splitType="Stretch"/>
+    </pageHeader>
+    <columnHeader>
+        <band height="61" splitType="Stretch">
+            <staticText>
+                <reportElement x="286" y="15" width="230" height="30" uuid="16037c78-5cc5-4cad-a423-d1f2ec2696d1"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="22"/>
+                </textElement>
+                <text><![CDATA[Detail Tiket]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="106" splitType="Stretch">
+            <property name="com.jaspersoft.studio.unit.height" value="px"/>
+            <textField>
+                <reportElement x="20" y="10" width="390" height="30" uuid="74d21a2a-7890-4f6b-805a-a27be53c1a11"/>
+                <textElement textAlignment="Left">
+                    <font size="18"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{nomorKursi}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="20" y="40" width="390" height="30" uuid="5c8212bd-a3fe-47b0-88ef-5c44e47f89fa"/>
+                <textElement>
+                    <font size="18"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{namaFilm}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="20" y="70" width="390" height="30" uuid="4fc715ab-ef3b-44b9-b340-f2cbe90e7ad9"/>
+                <textElement>
+                    <font size="18"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{jadwalFilm}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+    <columnFooter>
+        <band height="45" splitType="Stretch"/>
+    </columnFooter>
+    <pageFooter>
+        <band height="54" splitType="Stretch"/>
+    </pageFooter>
+    <summary>
+        <band height="42" splitType="Stretch"/>
+    </summary>
+</jasperReport>
