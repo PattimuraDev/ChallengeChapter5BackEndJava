@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: org.binar.ChallengeChapter5BackEndJava.ChallengeChapter5Back
+ EndJavaApplication
+
